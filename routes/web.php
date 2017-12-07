@@ -22,3 +22,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 route::get('/matricula', function(){
     return view('matricula');
 });
+
+//route::post('/matricula', 'PesquisarController');
