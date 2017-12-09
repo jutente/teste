@@ -4,11 +4,20 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
+            
+            @if(Session::has('sem_matricula')) 
+                <div class="alert alert-info">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="Fechar">&times;</a>
+                    <strong>Info!</strong> {{ session('sem_matricula') }}
+                </div>
+	        @endif
+
+
             <div class="panel panel-default">
                 <div class="panel-heading">Matricula</div>
 
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+                    <form class="form-horizontal" method="POST" action="{{ route('pesquisar.verificar') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('matricula') ? ' has-error' : '' }}">
