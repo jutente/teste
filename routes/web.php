@@ -23,4 +23,4 @@ route::get('/matricula', function(){
     return view('matricula');
 });
 
-Route::post('/pesquisar','PesquisarController@verificar')->name('pesquisar.verificar');
+Route::post('/matricula','PesquisarController@verificar')->name('pesquisar.verificar');

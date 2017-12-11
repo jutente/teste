@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Servidor;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -61,11 +63,21 @@ class RegisterController extends Controller
      * @return \App\User
      */
     protected function create(array $data)
-    {
+    {  
+        $id = $data['idservidor'];
+      
+        $servidor = Servidor::findOrFail($id);
+
+        $servidor->cadastrado=1;
+
+        $servidor->save() ;
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'perfil_id' => $data['perfil_id'],
             'password' => bcrypt($data['password']),
         ]);
+        
     }
 }
