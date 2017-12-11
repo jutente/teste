@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+                <div class="panel-heading">Destinos solicitados</div>
 
                 <div class="panel-body">
                     @if (session('status'))
@@ -13,8 +13,13 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    You are logged in!
+                        <div class="form-group">
+                            <div class="col-md-8 col-md-offset-4">
+                                <button type="submit" class="btn btn-primary">
+                                    Solicitar
+                                </button>                               
+                            </div>
+                        </div>
                 </div>
             </div>
         </div>
