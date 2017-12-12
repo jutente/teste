@@ -24,3 +24,5 @@ route::get('/matricula', function(){
 });
 
 Route::post('/matricula','PesquisarController@verificar')->name('pesquisar.verificar');
+
+Route::resource('/destino', 'DestinoController');
